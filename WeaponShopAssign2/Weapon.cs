@@ -6,7 +6,7 @@ namespace WeaponShopAssign2
 {
     class Weapon
     {
-        public string weaponName;
+        public string weaponName { get; set; }
         public int range;
         public int damage;
         public double weight;
@@ -23,7 +23,11 @@ namespace WeaponShopAssign2
 
         public string toString()
         {
-            return "";
+            return "Weapon Name: " + weaponName + "\n" + 
+                    "Damage: " + damage + "\n" + 
+                    "Range: " + range + "\n" + 
+                    "Weight: " + weight + "\n" + 
+                    "Cost: " + cost + "\n";
         }
 
     }

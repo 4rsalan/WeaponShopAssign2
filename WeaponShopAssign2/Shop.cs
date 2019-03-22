@@ -13,23 +13,36 @@ namespace WeaponShopAssign2
 
         }
 
-        public void AddToStore(string n, int rang, int dam, double w, double c)
+        public void AddToStore(string n, int rang, int dam, double w, double c, int amount)
         {
-                root = InsertHelper(root, n, rang, dam, w, c);
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Please enter a value greater than zero");
+            }
+                root = InsertHelper(root, n, rang, dam, w, c, amount);
         }
 
-        private BSTNode InsertHelper(BSTNode curr, string n, int rang, int dam, double w, double c)
+        private BSTNode InsertHelper(BSTNode curr, string n, int rang, int dam, double w, double c, int amount)
         {
             Weapon newWeapon = new Weapon(n, rang, dam, w, c);
-            if (curr == null) return new BSTNode(newWeapon);
-            if (newWeapon.weaponName.CompareTo(curr.weapon.weaponName) < 0)
+            if (curr == null) {
+                BSTNode newNode = new BSTNode();
+                newNode.UpdateNode(n, rang, dam, w, c, amount);
+                return newNode;
+            }
+            if (curr.weapon.Peek().weaponName == n)
             {
-                curr.left = InsertHelper(curr, n, rang, dam, w, c);
+                curr.UpdateNode(n, rang, dam, w, c, amount);
+                return curr;
+            }
+            if (newWeapon.weaponName.CompareTo(curr.weapon.Peek().weaponName) < 0)
+            {
+                curr.left = InsertHelper(curr, n, rang, dam, w, c, amount);
 
             }
-            if (newWeapon.weaponName.CompareTo(curr.weapon.weaponName) > 0)
+            if (newWeapon.weaponName.CompareTo(curr.weapon.Peek().weaponName) > 0)
             {
-                curr.right = InsertHelper(curr, n, rang, dam, w, c);
+                curr.right = InsertHelper(curr, n, rang, dam, w, c, amount);
 
             }
             return curr;
@@ -43,8 +56,8 @@ namespace WeaponShopAssign2
         private string searchHelper(BSTNode curr, string wName)
         {
             if (curr == null) return "Weapon not found";
-            if (curr.weapon.weaponName == wName) return "Weapon " + wName + " was found";
-            if (curr.weapon.weaponName.CompareTo(curr.weapon.weaponName) < 0) return searchHelper(curr.left, wName);
+            if (curr.weapon.Peek().weaponName == wName) return "Weapon " + wName + " was found" + curr.weapon.Peek().toString();
+            if (curr.weapon.Peek().weaponName.CompareTo(curr.weapon.Peek().weaponName) < 0) return searchHelper(curr.left, wName);
             return searchHelper(curr.right, wName);
         }
 
@@ -57,7 +70,7 @@ namespace WeaponShopAssign2
         {
             if (curr == null) return;
             InOrderTraversal(curr.left);
-            Console.WriteLine(curr.weapon.toString());
+            Console.WriteLine(curr.weapon.Peek().toString());
             InOrderTraversal(curr.right);
         }
 

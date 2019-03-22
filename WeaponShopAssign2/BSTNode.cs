@@ -6,15 +6,24 @@ namespace WeaponShopAssign2
 {
     class BSTNode
     {
-        public Weapon weapon;
+        public Stack<Weapon> weapon;
 
         public BSTNode left, right;
 
-        public BSTNode(Weapon w)
+        public BSTNode()
         {
             left = null;
             right = null;
-            weapon = w;
+            weapon = new Stack<Weapon>();
         }
+
+        public void UpdateNode(string n, int rang, int dam, double w, double c, int amount)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                this.weapon.Push(new Weapon(n, rang, dam, w, c));
+            }
+        }
+
     }
 }
