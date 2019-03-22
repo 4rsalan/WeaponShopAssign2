@@ -61,17 +61,21 @@ namespace WeaponShopAssign2
             }
         }
 
-        public void PrintInOrder()
+        public string PrintInOrder()
         {
-            PrintInOrderHelper(root);
+            return PrintInOrderHelper(root);
         }
 
-        private void PrintInOrderHelper(BSTNode curr)
+        private string PrintInOrderHelper(BSTNode curr)
         {
-            if (curr == null) return;
-            PrintInOrderHelper(curr.left);
-            Console.WriteLine(curr.weapon.Peek().toString());
-            PrintInOrderHelper(curr.right);
+            string s = "";
+
+            if (curr == null) return s;
+            s += PrintInOrderHelper(curr.left);
+            s += curr.weapon.Peek().toString() + "\n";
+            s +=PrintInOrderHelper(curr.right);
+
+            return s;
         }
 
         private BSTNode getNode (string wName)

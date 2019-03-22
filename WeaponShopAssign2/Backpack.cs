@@ -65,7 +65,7 @@ namespace WeaponShopAssign2
             }
         }
 
-        public string PrintBackpackContents()
+        public string PrintContents()
         {
             if (head != null)
             {
