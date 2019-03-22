@@ -50,28 +50,28 @@ namespace WeaponShopAssign2
 
         public string Search(string wName)
         {
-            return searchHelper(root, wName);
-        }
-
-        private string searchHelper(BSTNode curr, string wName)
-        {
-            if (curr == null) return "Weapon not found";
-            if (curr.weapon.Peek().weaponName == wName) return "Weapon " + wName + " was found" + curr.weapon.Peek().toString();
-            if (curr.weapon.Peek().weaponName.CompareTo(curr.weapon.Peek().weaponName) < 0) return searchHelper(curr.left, wName);
-            return searchHelper(curr.right, wName);
+            BSTNode node = getNode(wName);
+            if (node != null)
+            {
+                return node.weapon.Peek().toString();
+            }
+            else
+            {
+                return "Weapon not found";
+            }
         }
 
         public void PrintInOrder()
         {
-            InOrderTraversal(root);
+            PrintInOrderHelper(root);
         }
 
-        private void InOrderTraversal(BSTNode curr)
+        private void PrintInOrderHelper(BSTNode curr)
         {
             if (curr == null) return;
-            InOrderTraversal(curr.left);
+            PrintInOrderHelper(curr.left);
             Console.WriteLine(curr.weapon.Peek().toString());
-            InOrderTraversal(curr.right);
+            PrintInOrderHelper(curr.right);
         }
 
         private BSTNode getNode (string wName)

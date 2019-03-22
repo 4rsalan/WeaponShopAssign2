@@ -7,7 +7,7 @@ namespace WeaponShopAssign2
     class Player
     {
         public string name;
-        public Weapon[] backpack;
+        public Backpack backpack;
         public int numItems;
         public double money;
 
@@ -16,7 +16,7 @@ namespace WeaponShopAssign2
             name = n;
             money = m;
             numItems = 0;
-            backpack = new Weapon[10];
+            backpack = new Backpack(30);
         }
 
         public void buy(Weapon w)

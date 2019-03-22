@@ -515,7 +515,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "CCf4NjmDOoise7FAij2VPuHIgKKsu696vkTwhOkPVQfLsTmB2WLFfQ4yeO5Udtk8FD636UBMx6Y9eovzJKT76A==",
+      "sha512": "5BdAWDgMNwf90L0J+C/eh6kfHDa37ViL1cBL1nv5zPA4TB2cGV51YiQyvzCEy9DBE0LwwMI4+PkUpIekKyocSA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
@@ -666,23 +666,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andre\\.nuget\\packages\\": {},
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andre\\source\\repos\\WeaponShopAssign2\\WeaponShopAssign2\\WeaponShopAssign2.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\George Brown\\Year2\\Semester Two\\Data Structures\\Assignment2\\WeaponShopAssign2\\WeaponShopAssign2\\WeaponShopAssign2.csproj",
       "projectName": "WeaponShopAssign2",
-      "projectPath": "C:\\Users\\andre\\source\\repos\\WeaponShopAssign2\\WeaponShopAssign2\\WeaponShopAssign2.csproj",
-      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andre\\source\\repos\\WeaponShopAssign2\\WeaponShopAssign2\\obj\\",
+      "projectPath": "C:\\Users\\Lenovo\\Documents\\George Brown\\Year2\\Semester Two\\Data Structures\\Assignment2\\WeaponShopAssign2\\WeaponShopAssign2\\WeaponShopAssign2.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lenovo\\Documents\\George Brown\\Year2\\Semester Two\\Data Structures\\Assignment2\\WeaponShopAssign2\\WeaponShopAssign2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
