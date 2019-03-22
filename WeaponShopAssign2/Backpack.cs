@@ -65,7 +65,27 @@ namespace WeaponShopAssign2
             }
         }
 
-        public string PrintBackpack()
+        public string PrintBackpackContents()
+        {
+            if (head != null)
+            {
+                String s = "";
+
+                LinkedListNode curr = head;
+                while (curr.next != null)
+                {
+                    s += curr.weapon.toString();
+                    curr = curr.next;
+                }
+                return s;
+            }
+            else
+            {
+                return "Backpack is empty";
+            }
+        }
+
+        public string PrintWeaponNames()
         {
             if (head != null)
             {
