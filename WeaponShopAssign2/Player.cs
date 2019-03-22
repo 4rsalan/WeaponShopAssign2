@@ -18,14 +18,37 @@ namespace WeaponShopAssign2
             numItems = 0;
             backpack = new Backpack(30);
         }
-
+        /*
         public void buy(Weapon w)
         {
             Console.WriteLine(w.weaponName+" bought...");
-            backpack[numItems] = w;
+            //backpack[numItems] = w;
+            backpack.AddToBackpack(w);
             numItems++;
             Console.Write(numItems);
+        }// */
+        public bool buyFromShop(Shop shop, Weapon w, int amount)
+        {
+            if (w.weight * amount + backpack.presentWeight > backpack.maxWeight)
+            {
+                Console.WriteLine("You are to weak to carry these weapons");
+                return false;
+            }
+            if (w.cost * amount > money)
+            {
+                Console.WriteLine("You are to poor to buy these weapons");
+                return false;
+            }
+            Stack<Weapon> purchestedWeapons = shop.buyWeapon(w.weaponName, amount);
+            while (purchestedWeapons.Count > 0)
+            {
+                backpack.AddToBackpack(purchestedWeapons.Pop());
+                money -= w.cost;
+            }
+            return true;
         }
+
+
         public void withdraw(double amt)
         {
             money = money - amt;

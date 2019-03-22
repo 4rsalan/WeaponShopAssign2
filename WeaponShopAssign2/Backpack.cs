@@ -8,9 +8,9 @@ namespace WeaponShopAssign2
     // If an attempt to add a weapon to backpack is rejected due to weight
     class Backpack
     {
-        double maxWeight;
-        double presentWeight;
-        LinkedListNode head;
+        public double maxWeight { get; set; }
+        public double presentWeight { get; set; }
+        private LinkedListNode head;
 
         public Backpack(double mWeight)
         {

@@ -7,10 +7,10 @@ namespace WeaponShopAssign2
     class Weapon
     {
         public string weaponName { get; set; }
-        public int range;
-        public int damage;
-        public double weight;
-        public double cost;
+        public int range { get; set; }
+        public int damage { get; set; }
+        public double weight { get; set; }
+        public double cost { get; set; }
 
         public Weapon(string n, int rang, int dam, double w, double c)
         {
