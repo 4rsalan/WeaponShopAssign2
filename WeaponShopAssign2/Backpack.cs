@@ -85,5 +85,14 @@ namespace WeaponShopAssign2
             }
         }
 
+        internal string PrintContents()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string PrintWeaponNames()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

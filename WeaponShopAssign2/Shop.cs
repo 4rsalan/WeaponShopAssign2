@@ -105,12 +105,14 @@ namespace WeaponShopAssign2
         private BSTNode deleteNodeHelper(BSTNode curr, string wName)
         {
             if (curr == null) return null;
-
-            if (curr.weapon.Peek().weaponName == wName)
+            int comparison = curr.weapon.Peek().weaponName.CompareTo(wName);
+            if (comparison < 0)
+                curr.left = deleteNodeHelper(curr.left, wName);
+            if (comparison > 0)
+                curr.right = deleteNodeHelper(curr.right, wName);
+            if (comparison == 0)
             {
                 //Case 1 delete a leaf node
-                if (curr.left == null && curr.right == null)
-                    return null;
                 //Case 2 delete a node that has a single child
                 if (curr.left == null)
                     return curr.right;
@@ -119,21 +121,11 @@ namespace WeaponShopAssign2
                 //Case 3 two children (replace with in order sucessor) 
                 //find next in order node
                 BSTNode nextInOrder = curr.right;
-                BSTNode prev = null;
                 while (nextInOrder.left != null)
-                {
-                    prev = nextInOrder;
                     nextInOrder = nextInOrder.left;
-                }
-                if (prev != null)prev.left = nextInOrder.right;
-                nextInOrder.right = curr.right;
-                nextInOrder.left = curr.left;
-                return nextInOrder;
+                curr.weapon = nextInOrder.weapon;
+                curr.right = deleteNodeHelper(curr.right, curr.weapon.Peek().weaponName);
             }
-            if (curr.weapon.Peek().weaponName.CompareTo( wName) < 0)
-                curr.left = deleteNodeHelper(curr.left, wName);
-            else if (curr.weapon.Peek().weaponName.CompareTo(wName) > 0)
-                curr.right = deleteNodeHelper(curr.right, wName);
             return curr;
         }
     }

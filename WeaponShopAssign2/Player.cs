@@ -27,17 +27,17 @@ namespace WeaponShopAssign2
             numItems++;
             Console.Write(numItems);
         }// */
-        public bool buyFromShop(Shop shop, Weapon w, int amount)
+        public string buyFromShop(Shop shop, Weapon w, int amount)
         {
             if (w.weight * amount + backpack.presentWeight > backpack.maxWeight)
             {
-                Console.WriteLine("You are to weak to carry these weapons");
-                return false;
+               // Console.WriteLine("You are to weak to carry these weapons");
+                return "You are to weak to carry these weapons";
             }
             if (w.cost * amount > money)
             {
-                Console.WriteLine("You are to poor to buy these weapons");
-                return false;
+                //Console.WriteLine("You are to poor to buy these weapons");
+                return "You are to poor to buy these weapons";
             }
             Stack<Weapon> purchestedWeapons = shop.buyWeapon(w.weaponName, amount);
             while (purchestedWeapons.Count > 0)
@@ -45,7 +45,7 @@ namespace WeaponShopAssign2
                 backpack.AddToBackpack(purchestedWeapons.Pop());
                 money -= w.cost;
             }
-            return true;
+            return $"You are the roud owner of {amount} {w.weaponName}s";
         }
 
 
@@ -68,14 +68,13 @@ namespace WeaponShopAssign2
             printBackpack();
         }
 
-        public void printBackpack()
+        public string printBackpack()
         {
-            Console.WriteLine(" "+name+", you own "+numItems+" Weapons:");
-            for (int x = 0; x < numItems; x++)
-            {
-                Console.WriteLine(" "+backpack[x].weaponName);
-            }
-            Console.WriteLine();
+            return backpack.PrintContents();
+        }
+        public string printPlayer()
+        {
+            return $"Name: {name}, Money: {money}" + backpack.PrintWeaponNames();
         }
     }
 }
