@@ -29,27 +29,27 @@ namespace WeaponShopAssign2
             }
         }
 
-        public static void showRoom(HashTable ht, Player p)
+        public static void showRoom(HashTable ht, Player player)
         {
             string choice;
             Console.WriteLine("WELCOME TO THE SHOWROOM!!!!");
             ht.printTable();
-            Console.WriteLine(" You have "+p.money+" money.");
+            Console.WriteLine(" You have "+player.money+" money.");
             Console.WriteLine("Please select a weapon to buy('end' to quit):");
             choice=Console.ReadLine();
-            while (choice.CompareTo("end") != 0 && !p.inventoryFull())
+            while (choice.CompareTo("end") != 0 && !player.inventoryFull())
             {
-                Weapon w = ht.get(choice);
-                if (w != null)
+                Weapon weapon = ht.get(choice);
+                if (weapon != null)
                 {
-                    if (w.cost > p.money)
+                    if (weapon.cost > player.money)
                     {
-                        Console.WriteLine("Insufficient funds to buy "+w.weaponName );
+                        Console.WriteLine("Insufficient funds to buy "+weapon.weaponName );
                     }
                     else
                     {
-                        p.buy(w);
-                        p.withdraw(w.cost);
+                        player.buyFromShop(shop, weapon, 1);
+                        player.withdraw(weapon.cost);
                     }
                 }
                 else

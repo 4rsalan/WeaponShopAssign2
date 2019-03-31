@@ -70,12 +70,15 @@ namespace WeaponShopAssign2
 
         public void printBackpack()
         {
+            Console.WriteLine(backpack.PrintBackpack());
+            /*
             Console.WriteLine(" "+name+", you own "+numItems+" Weapons:");
             for (int x = 0; x < numItems; x++)
             {
                 Console.WriteLine(" "+backpack[x].weaponName);
             }
             Console.WriteLine();
+            */
         }
     }
 }
