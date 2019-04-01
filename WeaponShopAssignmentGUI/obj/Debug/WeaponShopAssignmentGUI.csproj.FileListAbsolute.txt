@@ -1,0 +1,16 @@
+C:\Temp\WeaponShopAssignmentGUI\bin\Debug\WeaponShopAssignmentGUI.exe.config
+C:\Temp\WeaponShopAssignmentGUI\bin\Debug\WeaponShopAssignmentGUI.exe
+C:\Temp\WeaponShopAssignmentGUI\bin\Debug\WeaponShopAssignmentGUI.pdb
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.csprojAssemblyReference.cache
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.FormMain.resources
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.FormAddShop.resources
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.FormBuyShop.resources
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.FormDeleteShop.resources
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.FormFindWeapon.resources
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.FormManageShop.resources
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.FormPlayerInfo.resources
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.Properties.Resources.resources
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.csproj.GenerateResource.cache
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.csproj.CoreCompileInputs.cache
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.exe
+C:\Temp\WeaponShopAssignmentGUI\obj\Debug\WeaponShopAssignmentGUI.pdb
